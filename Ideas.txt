@@ -1,3 +1,0 @@
-Header:
-
-- Logo com nome longo horizontalmente
