@@ -1,5 +1,13 @@
+@font-face {
+    font-family: 'font1';
+    src: url('../Fontes/BasementGrotesque-Black_v1.202/BasementGrotesque-Black.otf') format('truetype');
+}
+@font-face {
+    font-family: 'font2';
+    src: url('../Fontes/ClashGrotesk_Complete/ClashGrotesk_Complete/Fonts/TTF/ClashGrotesk-Variable.ttf') format('truetype');
+}
 ::-webkit-scrollbar {
-    display: none;
+    width: 0;
 }
 
 body {
@@ -8,11 +16,23 @@ body {
     padding: 0;
 }
 
+#nbs {
+    height: 20vh;
+}
 header {
-    box-shadow: 0 0 1rem .5rem rgba(0, 0, 0, 0.3);
+    -webkit-backdrop-filter: blur(.25rem);
+    backdrop-filter: blur(.25rem);
+    background-color: rgba(35, 49, 58, 0.6);
+    border-radius: 1rem;
+    box-shadow: 0 .3rem .5rem .1rem rgba(0, 0, 0, 0.3);
     display: flex;
     flex-direction: row;
-    height: 18vh;
+    height: 15vh;
+    left: 10%;
+    outline: solid rgba(165, 204, 219, 0.15) .15rem;
+    position: fixed;
+    top: 2.5%;
+    width: 80%;
 }
 #logo {
     align-items: center;
@@ -24,16 +44,16 @@ header {
 #logoimg {
     box-sizing: border-box;
     margin: 0;
-    width: 15vw;
+    width: 11vw;
 }
 
 #linksdiv {
     align-items: center;
     border-left: .1rem solid;
-    border-image: linear-gradient(180deg, #23313A 10%, #a5ccdb80, #23313A 90%) 1;
+    border-image: linear-gradient(180deg, #23313A 10%, rgba(165, 204, 219, 0.342), #23313A 90%) 1;
     box-sizing: border-box;
     display: flex;
-    flex-grow: 4;
+    flex-grow: 3;
     justify-content: space-evenly;
 }
 #links {
@@ -52,7 +72,7 @@ header {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    height: 35%;
+    height: 38%;
     transition: .5s;
 }
 #links li:hover {
@@ -62,16 +82,19 @@ header {
 }
 .linksa {
     box-sizing: border-box;
-    color: white;
+    color: #c6a964;
     display: block;
-    font-size: 2rem;
+    font-family: 'font2';
+    font-size: 2.25rem;
+    font-weight: lighter;
     overflow: hidden;
     padding: 0 1rem;
     position: relative;
     text-decoration: none;
+    text-transform: uppercase;
 }
-span {
-    
+.linkmain,
+.linkspan {
     display: block;
     transition: .5s;
 }
@@ -91,13 +114,112 @@ span {
     top: -100%;
 }
 
-#one {
-    height: 100vh;
-    width: 100%;
+
+#progressbar {
+    background: linear-gradient(to top, #A5CCDB, #23313A 75%);
+    border-radius: 0 0 10px 10px;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 15px;
+}
+#zero {
+    align-items: center;
+    display: flex;
+    justify-content: center;
 }
 
+#zero h1 {
+    color: #A5CCDB;
+    font-family: "font1";
+    font-size: 6rem;
+    margin: 1rem;
+    text-shadow: -.5rem .75rem 1rem rgba(0, 0, 0, 0.5);
+}
+
+#firsthr {
+    border: solid rgba(255, 255, 255, 0.15) .1rem;
+    width: 30%;
+}
+
+#one,
+#two {
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+    height: 40vh;
+    position: relative;
+    width: 100%;
+}
+#one span,
+#two span {
+    align-items: center;
+    background-color: transparent;
+    cursor: pointer;
+    display: flex;
+    height: 150px;
+    justify-content: center;
+    position: relative;
+    width: 150px;
+}
+#one span::before,
+#two span::before {
+    border-bottom: .1rem slid white;
+    border-radius: 1rem;
+    box-shadow: 0 0rem .25rem .3rem rgba(0, 0, 0, 0.3);
+    color: white;
+    font-family: fontAwesome;
+    font-size: 8em;
+    height: 0;
+    left: 0;
+    line-height: 150px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    text-align: center;
+    top: -5px;
+    transition: .75s;
+    width: 100%;
+}
+#linkedin:before {
+    content: '\f08c';
+}
+#github:before {
+    content: '\f09b';
+}
+#email:before {
+    content: '\f0e0';
+}
+
+#phone:before {
+    content: '\f098';
+}
+#instagram:before {
+    content: '\f16d';
+}
+#facebook:before {
+    content: '\f082';
+}
+
+#one span:hover::before,
+#two span:hover::before {
+    height: 100%;
+    opacity: 1;
+}
+#one span b,
+#two span b {
+    -webkit-text-stroke: 1px white;
+    color: transparent;
+    font-size: 8em;
+    font-weight: 700;
+    transition: .5s;
+}
+
+
 footer {
-    background-color: #A5CCDB;
+    background-color: #6C4A1B;
 }
 
 #licenses {
@@ -105,4 +227,11 @@ footer {
     display: flex;
     height: 8vh;
     justify-content: center;
+}
+#licenses h3 {
+    color: white;
+    font-family: 'font2';
+    font-weight: lighter;
+    font-size: 1.5rem;
+    text-transform: uppercase;
 }

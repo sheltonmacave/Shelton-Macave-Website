@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-    <link rel="icon" href="/Web Dev/Shelton Macave/Logo/SMlogo.png">
+    <link rel="icon" href="/Web Dev/Shelton Macave/Logo/SMlogocut.png">
     <link rel="stylesheet" href="contactos.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shelton Macave</title>
+    <title>CONTACTOS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    />
 </head>
 <body>
+    <section id ="nbs"></section>
     <header>
         <div id = "logo">
-            <a href="/Web Dev/Shelton Macave/index.html"><img id = "logoimg" src="/Web Dev/Shelton Macave/Logo/SMlogo.png" alt="Shelton Macave Logo"></a>
+            <a href="/Web Dev/Shelton Macave/index.html"><img id = "logoimg" src="/Web Dev/Shelton Macave/Logo/SMstripecut.png" alt="Shelton Macave Logo"></a>
         </div>
         <div id = "linksdiv">
             <ul id = "links">
@@ -33,14 +39,61 @@
         </div>
     </header>
 
-    <div id = "one">
-
-    </div>
+    <div id="progressbar"></div>
+    <section id = "zero">
+        <h1>CONTACTOS</h1>
+    </section>
+    <hr id = "firsthr">
+    <section id = "one">
+        <a href="https://www.linkedin.com/in/shelton-elias-57a340249" target="_blank">
+            <span id = "linkedin">
+                <b><i class="fa-brands fa-linkedin"></i></b>
+            </span>
+        </a>
+        <a href="https://github.com/sheltonmacave" target="_blank">
+            <span id = "github">
+                <b><i class="fa-brands fa-github"></i></b>
+            </span>
+        </a>
+        <a href="mailto:sheltonelias992@gmail.com">
+            <span id = "email">
+                <b><i class="fa-solid fa-envelope"></i></b>
+            </span>
+        </a>
+    </section>
+    <section id = "two">
+        <a href="tel:+258823551117">
+            <span id = "phone">
+                <b><i class="fa-solid fa-square-phone"></i></b>
+            </span>
+        </a>
+        <a href="https://www.instagram.com/_drakesdeception/">
+            <span id = "instagram">
+                <b><i class="fa-brands fa-instagram"></i></b>
+            </span>
+        </a>
+        <a href="https://www.facebook.com/sheltone153">
+            <span id = "facebook">
+                <b><i class="fa-brands fa-square-facebook"></i></b>
+            </span>
+        </a>
+        
+    </section>
 
     <footer>
         <div id = "licenses">
             <h3>©Shelton Macave</h3>
         </div>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script type="text/javascript">
+        $(window).scroll(function(){
+            var scroll = $(window).scrollTop(),
+            dh = $(document).height(),
+            wh = $(window).height();
+            scrollPercent = (scroll / (dh - wh)) * 100;
+            $('#progressbar').css('height', scrollPercent + '%')
+        })
+    </script>
 </body>
 </html>
