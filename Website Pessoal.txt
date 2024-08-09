@@ -1,6 +1,7 @@
 Dark Blue - #23313A
 Light Blue - #A5CCDB
 Brown - #6C4A1B
+Doric White - #d4d1be
 
 Criativo
 

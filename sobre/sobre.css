@@ -116,14 +116,14 @@ header {
 
 
 #progressbar {
-    background: linear-gradient(to top, #A5CCDB, #23313A 75%);
-    border-radius: 0 0 10px 10px;
+    background: #6C4A1B;
+    border-radius: 0 0 1rem 0;
     height: 100%;
     left: 0;
     position: fixed;
     right: 0;
     top: 0;
-    width: 15px;
+    width: .75rem;
 }
 #zero {
     align-items: center;
@@ -148,12 +148,13 @@ header {
 
 footer {
     background-color: #6C4A1B;
+    height: auto;
 }
 
 #licenses {
     align-items: center;
     display: flex;
-    height: 8vh;
+    flex-direction: column;
     justify-content: center;
 }
 #licenses h3 {
@@ -161,5 +162,6 @@ footer {
     font-family: 'font2';
     font-weight: lighter;
     font-size: 1.5rem;
+    margin: .75rem 0;
     text-transform: uppercase;
 }
