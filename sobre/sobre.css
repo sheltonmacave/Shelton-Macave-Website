@@ -12,6 +12,7 @@
 
 body {
     background: #23313A;
+    height: 400vh;
     margin: 0;
     padding: 0;
 }
@@ -33,6 +34,7 @@ header {
     position: fixed;
     top: 2.5%;
     width: 80%;
+    z-index: 100;
 }
 #logo {
     align-items: center;
@@ -124,6 +126,7 @@ header {
     right: 0;
     top: 0;
     width: .75rem;
+    z-index: 100;
 }
 #zero {
     align-items: center;
@@ -144,7 +147,261 @@ header {
     width: 30%;
 }
 
+#one {
+    height: 400vh;
+}
+#box {
+    margin: 0 auto;
+    padding: 40px;
+    position: sticky;
+    top: 50%;
+    transform: translateY(-30%);
+    width: 80%;
+}
+#text {
+    color: white;
+    font-family: "font2";
+    line-height: 3.5rem;
+    text-align: center;
+}
+#text span {
+    color: #23313A;
+    font-size: 3rem;
+    position: relative;
+    transition: .25s;
+}
+#text span.active {
+    color: rgba(255, 255, 255, 0.8);
+}
 
+#second {
+    overflow: hidden;
+}
+@keyframes down2 {
+    from {transform: translateY(-100%);}
+    to {transform: unset;}
+}
+@keyframes down3 {
+    from {transform: translateY(-100%);}
+    to {transform: unset;}
+}
+@keyframes down4 {
+    from {transform: translateY(-100%);}
+    to {transform: unset;}
+}
+@keyframes down5 {
+    from {transform: translateY(-100%);}
+    to {transform: unset;}
+}
+@keyframes down6 {
+    from {transform: translateY(-100%);}
+    to {transform: unset;}
+}
+@keyframes down7 {
+    from {transform: translateY(-100%);}
+    to {transform: unset;}
+}
+#second div {
+    animation:  5s;
+    align-items: center;
+    background-color: #23313A;
+    box-shadow: 0 .3rem .5rem .1rem rgba(0, 0, 0, 0.2) inset;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 3rem;
+    z-index: 10;
+}
+#second div:nth-child(2) {
+    animation: down2 5s;
+    flex-direction: row-reverse;
+    z-index: 9;
+}
+#second div:nth-child(3) {
+    animation: down3 5s 1.5s;
+    z-index: 8;
+}
+#second div:nth-child(4) {
+    animation: down4 5s 3s;
+    flex-direction: row-reverse;
+    z-index: 7;
+}
+#second div:nth-child(5) {
+    animation: down5 5s 4.5s;
+    z-index: 6;
+}
+#second div:nth-child(6) {
+    animation: down6 5s 6s;
+    flex-direction: row-reverse;
+    z-index: 5;
+}
+#second div:nth-child(7) {
+    animation: down7 5s 7.5s;
+    z-index: 4;
+}
+#second div:nth-child(8) {
+    animation: down8 5s 9s;
+    flex-direction: row-reverse;
+    z-index: 3;
+}
+#second div img {
+    border-radius: 2rem;
+    box-shadow: .5rem .5rem .6rem .1rem rgba(0, 0, 0, 0.3);
+    height: 400px;
+    object-fit: cover;
+    width: 400px;
+}
+h2 {
+    color: #23313A;
+    font-family: "font2";
+    font-size: 12rem;
+    line-height: 1em;
+    position: relative;
+    text-shadow: -.5rem .75rem 1rem rgba(0, 0, 0, 0.5);
+    transition: 1s all ease;
+}
+h2::before {
+    content: attr(data-text);
+    color: #A5CCDB;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    text-shadow: -.5rem .75rem 1rem rgba(0, 0, 0, 0.5);
+    transition: 1s all ease;
+    width: 0%;
+}
+h2.active::before {
+    width: 100%;
+}
+.current h2::before {
+    border-right: 2px solid white;
+    color: #c6a964;
+}
+
+#three {
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100%;
+}
+#three div {
+    align-items: center;
+    border-radius: .5rem;
+    box-shadow: unset;
+    cursor: pointer;
+    display: flex;
+    filter: saturate(0%) blur(.1rem);
+    flex-direction: row;
+    height: 15%;
+    justify-content: left;
+    width: 80%;
+
+    transition: filter 1s, box-shadow .5s;
+}
+#three div:nth-child(1) {
+    background-image: url('Paises/PT.png');
+    background-position:left;
+}
+#three div:nth-child(2) {
+    background-image: url('Paises/GB.png');
+    object-fit: cover;
+}
+#three div:nth-child(3) {
+    background-image: url('Paises/IT.png');
+    background-position:center;
+}
+#three div:nth-child(4) {
+    background-image: url('Paises/ES.png');
+    background-position:left;
+}
+#three div:nth-child(5) {
+    background-image: url('Paises/MZ.png');
+    background-position:left;
+    justify-content: right;
+}
+#three div:nth-child(1):hover,
+#three div:nth-child(2):hover,
+#three div:nth-child(3):hover,
+#three div:nth-child(4):hover,
+#three div:nth-child(5):hover {
+    box-shadow: .5rem .5rem .6rem .1rem rgba(0, 0, 0, 0.3);
+    filter: saturate(100%) blur(0);
+}
+#three div img {
+    width: 100px;
+}
+.threeh2 {
+    color: white;
+    font-size: 2.2rem;
+    font-weight: 400;
+    letter-spacing: .5rem;
+    padding: .75rem;
+    text-shadow: -.35rem .35rem .4rem rgba(0, 0, 0, 0.5);
+    text-transform: uppercase;
+}
+#three div:nth-child(3) h2,
+#three div:nth-child(4) h2 {
+   color: black;
+   text-shadow: -.35rem .35rem .4rem rgba(0, 0, 0, 0.2);
+}
+#three div:nth-child(1) h2,
+#three div:nth-child(2) h2,
+#three div:nth-child(3) h2,
+#three div:nth-child(4) h2 {
+   margin-left: 10%;
+}
+#three div:nth-child(5) h2 {
+    letter-spacing: .2rem;
+}
+
+#four {
+    align-items: center;
+    display: flex;
+    font-family: "Font1";
+    font-size: 3rem;
+    height: 60vh;
+    justify-content: center;
+    text-transform: uppercase;
+    width: 100%;
+}
+#ffixed {
+    align-items: center;
+    background: #A5CCDB;
+    border-radius: 1rem 0 0 1rem;
+    display: flex;
+    height: 20vh;
+    justify-content: center;
+    width: 25%;
+}
+#fdynamic {
+    align-items: center;
+    border-radius: 0 1rem 1rem 0;
+    box-shadow: 0 0 .8rem .1rem rgba(0, 0, 0, 0.8) inset;
+    color: #A5CCDB;
+    display: flex;
+    flex-direction: column;
+    height: 20vh;
+    justify-content: end;
+    overflow: hidden;
+    width: 72%;
+}
+#fdynamic div {
+    animation: scroll 10s infinite;
+    line-height: 1rem;
+}
+@keyframes scroll {
+    0% {transform: translateY(0rem);}
+    15% {transform: translateY(0rem);}
+    20% {transform: translateY(8.5rem);}
+    35% {transform: translateY(8.5rem);}
+    40% {transform: translateY(17rem);}
+    55% {transform: translateY(17rem);}
+    60% {transform: translateY(25.5rem);}
+    75% {transform: translateY(25.5rem);}
+    80% {transform: translateY(34rem);}
+    100% {transform: translateY(34rem);}
+}
 
 footer {
     background-color: #6C4A1B;

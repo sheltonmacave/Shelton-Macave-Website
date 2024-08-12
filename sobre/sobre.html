@@ -41,12 +41,83 @@
 
     <div id="progressbar"></div>
     <section id = "zero">
-        <h1></h1>
+        <h1>SOBRE MIM</h1>
     </section>
     <hr id = "firsthr">
     
+    <section id = "one">
+        <div id = "box">
+            <h1></h1>
+            <p id = "text">Eu chamo-me <b>Shelton Elias Macave</b>, sou um jovem Moçambicano de 18 anos de idade, solteiro, cristão. Com 1,80m de altura e 65KG de Peso.<br> Estudante de Informática no Instituto Médio Politécnico de Maputo.</p>
+        </div>
+    </section>
     
+    <section id = "second">
+        <div>
+            <h2 data-text="2011">2011</h2>
+            <img src="2011.jpg" alt="">
+        </div>
+        <div>
+            <h2 data-text="2012">2012</h2>
+            <img src="2012.jpg" alt="">
+        </div>
+        <div>
+            <h2 data-text="2019">2019</h2>
+            <img src="2019.jpg" alt="">
+        </div>
+        <div class = "current">
+            <h2 data-text="2020">2020</h2>
+            <img src="2020.jpg" alt="">
+        </div>
+        <div>
+            <h2 data-text="2021">2021</h2>
+            <img src="2021.jpg" alt="">
+        </div>
+        <div>
+            <h2 data-text="2022">2022</h2>
+            <img src="2022.jpg" alt="">
+        </div>
+        <div>
+            <h2 data-text="2023">2023</h2>
+            <img src="2023.jpg" alt="">
+        </div>
+        <div>
+            <h2 data-text="2024">2024</h2>
+            <img src="2024.jpg" alt="">
+        </div>
+    </section>
 
+    <section id = "three">
+        <div>
+            <h2 class="threeh2">Nativo</h2>
+        </div>
+        <div>
+            <h2 class="threeh2">Fluente</h2>
+        </div>
+        <div>
+            <h2 class="threeh2">Intermediário</h2>
+        </div>
+        <div>
+            <h2 class="threeh2">Intermediário</h2>
+        </div>
+        <div>
+            <h2 class="threeh2">Changana - Elementar</h2>
+        </div>
+    </section>
+
+    <section id = "four">
+        <div id="ffixed">
+            <h1>Eu Sou</h1>
+        </div>
+        <div id="fdynamic">
+            <div><h1>Produtor Musical</h1></div>
+            <div><h1>Arquitecto</h1></div>
+            <div><h1>Designer</h1></div>
+            <div><h1>Analista de Dados</h1></div>
+            <div><h1>Desenvolvedor Web</h1></div>
+        </div>
+    </section>
+    
     <footer>
         <div id = "licenses">
             <h3>©Shelton Macave</h3>
@@ -61,6 +132,42 @@
             scrollPercent = (scroll / (dh - wh)) * 100;
             $('#progressbar').css('height', scrollPercent + '%')
         })
+
+        let textElement = document.querySelector('#text');
+        let textContent = textElement.textContent;
+        textElement.innerHTML = '';
+        for (let char of textContent) {
+            let span = document.createElement('span');
+            span.textContent = char;
+            textElement.appendChild(span);
+        }
+        let spans = textElement.querySelectorAll('span');
+        window.addEventListener('scroll', () => {
+            let scrollDistance = window.scrollY;
+            spans.forEach((span, index) => {
+                if (scrollDistance >= (index + 1) * 10) {
+                    span.classList.add('active')
+                } else {
+                    span.classList.remove('active')
+                }
+            })
+        })
+
+        function reveal() {
+            let item = document.querySelectorAll('h2');
+            for (var i = 0; i < item.length; i++) {
+                let windowHeight = window.innerHeight;
+                let elementTop = item[i].getBoundingClientRect().top;
+                let elementVisible = 300;
+
+                if (elementTop < windowHeight - elementVisible) {
+                    item[i].classList.add("active")
+                } else {
+                    item[i].classList.remove("active")
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
     </script>
 </body>
 </html>
