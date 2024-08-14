@@ -17,12 +17,17 @@ body {
 }
 
 #nbs {
+    background: url('../Slides Images/colorkit.png');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     height: 20vh;
 }
 header {
     -webkit-backdrop-filter: blur(.25rem);
     backdrop-filter: blur(.25rem);
-    background-color: rgba(35, 49, 58, 0.6);
+    background-color: rgba(0, 0, 0, 0.3);
     border-radius: 1rem;
     box-shadow: 0 .3rem .5rem .1rem rgba(0, 0, 0, 0.3);
     display: flex;
@@ -51,7 +56,7 @@ header {
 #linksdiv {
     align-items: center;
     border-left: .1rem solid;
-    border-image: linear-gradient(180deg, #23313A 10%, rgba(165, 204, 219, 0.342), #23313A 90%) 1;
+    border-image: linear-gradient(180deg, transparent 10%, rgba(165, 204, 219, 0.342), transparent 90%) 1;
     box-sizing: border-box;
     display: flex;
     flex-grow: 3;

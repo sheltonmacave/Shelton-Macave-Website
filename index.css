@@ -1,4 +1,8 @@
 @font-face {
+    font-family: 'fontlogo';
+    src: url('Fontes/lamarkie/Lamarkie.otf') format('truetype');
+}
+@font-face {
     font-family: 'font1';
     src: url('Fontes/BasementGrotesque-Black_v1.202/BasementGrotesque-Black.otf') format('truetype');
 }
@@ -17,12 +21,12 @@ body {
 }
 
 #nbs {
-    height: 20vh;
+    height: 0vh;
 }
 header {
     -webkit-backdrop-filter: blur(.25rem);
     backdrop-filter: blur(.25rem);
-    background-color: rgba(35, 49, 58, 0.6);
+    background-color: rgba(0, 0, 0, 0.3);
     border-radius: 1rem;
     box-shadow: 0 .3rem .5rem .1rem rgba(0, 0, 0, 0.3);
     display: flex;
@@ -33,6 +37,7 @@ header {
     position: fixed;
     top: 2.5%;
     width: 80%;
+    z-index: 10;
 }
 #logo {
     align-items: center;
@@ -50,7 +55,7 @@ header {
 #linksdiv {
     align-items: center;
     border-left: .1rem solid;
-    border-image: linear-gradient(180deg, #23313A 10%, rgba(165, 204, 219, 0.342), #23313A 90%) 1;
+    border-image: linear-gradient(180deg, transparent 10%, rgba(165, 204, 219, 0.342), transparent 90%) 1;
     box-sizing: border-box;
     display: flex;
     flex-grow: 3;
@@ -124,6 +129,7 @@ header {
     right: 0;
     top: 0;
     width: .75rem;
+    z-index: 10;
 }
 #zero {
     align-items: center;
@@ -139,11 +145,160 @@ header {
     text-shadow: -.5rem .75rem 1rem rgba(0, 0, 0, 0.5);
 }
 
+#one {
+    align-items: center;
+    background: url('Slides Images/colorkit.png');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    width: 100%;
+}
+.text {
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    height: 40%;
+    margin: 0;
+    width: 100%;
+}
+#one div:nth-child(1) {
+    margin-top: 9%;
+}
+#one div:nth-child(1) h1 {
+    animation: ltitle 25s linear infinite alternate;
+    transform: translateX(200%);
+}
+#one div:nth-child(3) h1 {
+    animation: rtitle 25s 1s linear infinite alternate;
+    transform: translateX(-100%);
+}
+@keyframes ltitle {
+    from {transform: translateX(200%);}
+    to {transform: translateX(-100%);}
+}
+@keyframes rtitle {
+    from {transform: translateX(-100%);}
+    to {transform: translateX(200%);}
+}
+.text h1 {
+    color: #d4d1be;
+    font-size: 6rem;
+    font-family: "fontlogo";
+    letter-spacing: .5rem;
+}
+@keyframes lefth1 {
+    
+}
+
 #firsthr {
     border: solid rgba(255, 255, 255, 0.15) .1rem;
     width: 30%;
 }
 
+.parallax {
+    align-items: center;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    height: 200vh;
+    justify-content: center;
+    transition: background-position 0.3s ease-in-out; /* Transição suave */
+}
+
+/* Parallax de menor intensidade */
+.parallax:nth-child(1) {
+    background-image: url('Slides Images/Me 4.jpg');
+}
+
+.parallax:nth-child(2) {
+    background-image: url('Slides Images/CV 5.jpg');
+}
+
+.parallax:nth-child(3) {
+    background-image: url('Slides Images/Contactos 6.jpg');
+}
+
+.parallax h1 {
+    color: #A5CCDB;
+    font-size: 10vw;
+    font-family: "Font1";
+    margin: 0;
+    mix-blend-mode: hard-light;
+}
+.parallax:nth-child(2) h1 {
+    color: #c6a964;
+    mix-blend-mode: difference;
+}
+.parallax:nth-child(3) h1 {
+    color: #c6a964;
+    mix-blend-mode: difference;
+}
+.parallax p {
+    color: white;
+    font-size: 3vw;
+    font-family: "Font2";
+    text-align: center;
+    width: 70%;
+}
+.parallax:nth-child(3) p {
+    color: white;
+    mix-blend-mode: difference;
+}
+.asa {
+    border-right: solid white .1rem;
+    border-left: solid white .1rem;
+    border-radius: 0rem;
+    box-sizing: border-box;
+    color: white;
+    display: block;
+    font-family: 'font2';
+    font-size: 2.5rem;
+    font-weight: lighter;
+    height: 4%;
+    overflow: hidden;
+    padding: 0 1rem;
+    position: relative;
+    text-decoration: none;
+
+    transition: border-left 1s, border-right 1s, border-radius 1s;
+}
+.amain,
+.aspan {
+    display: block;
+    transition: .5s;
+}
+.asa:hover span {
+    color: #c6a964;
+    transform: translateY(-100%);
+}
+.asa::before {
+    content: attr(data-link-alt);
+    position: absolute;
+    opacity: 1;
+    top: 0;
+    transition: .5s;
+}
+.asa:hover::before {
+    opacity: 1;
+    top: -100%;
+}
+.asa:hover {
+    animation: acolor 2s;
+    border: solid #c6a964 .1rem;
+    border-radius: .75rem;
+}
+@keyframes acolor {
+    from {border: solid white .1rem;}
+    to {border: solid #c6a964 .1rem;}
+}
 
 
 footer {
